@@ -9,7 +9,7 @@ const login=require('./routes/login')
 const productRouter=require('./routes/product')
 app.use(express.json())
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:'https://raos-romato.onrender.com'
 }))
 app.use(express.urlencoded({ extended: true }));
 app.get("/",(req,res)=>{
