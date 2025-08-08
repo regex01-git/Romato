@@ -27,7 +27,7 @@ export const fetchMenu=createAsyncThunk(
     "productSlice/fetchMenu",
     async(values,{rejectWithValue})=>{
       try{
-          let resp=await axios.get('http://localhost:5000/api/product');
+          let resp=await axios.get('https://romato-1.onrender.com/api/product');
         // resp=await resp.json();
         // console.log("menu response",resp)
         

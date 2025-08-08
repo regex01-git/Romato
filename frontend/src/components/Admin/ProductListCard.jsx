@@ -9,7 +9,7 @@ const ProductListCard = ({item}) => {
     const dispatch=useDispatch()
     async function removeItem(item){
         try{
-            const response=await axios.delete(`http://localhost:5000/api/product/${item._id}`)
+            const response=await axios.delete(`https://romato-1.onrender.com/api/product/${item._id}`)
             console.log("delete response",response)
             if(response.data.status==='success'){
                 dispatch(fetchMenu())

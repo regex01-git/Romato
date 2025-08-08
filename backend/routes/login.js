@@ -8,10 +8,8 @@ router.use(express.urlencoded({ extended: true }));
 router.post('/',async(req,res)=>{
     // console.log("login body",req.body)
     const {email,password}=req.body.data
-    console.log("password:",req.body)
     try{
         let user=await User.findOne({email})
-    console.log("user",user)
     if(!user){
         res.status(401).send("User is not exist with this email or password");
     }
@@ -29,7 +27,7 @@ router.post('/',async(req,res)=>{
     // })
     }
     catch(err){
-        console.log("error in server",err)
+        res.status(500).send("Internal Server Error");
     }
 })
 module.exports=router

@@ -6,10 +6,8 @@ const upload=require('../utils/multer')
 router.post('/',upload.single('image'),async(req, res) => {
    
     const {name,reviewCount,rating}=req.body;
-     console.log("enter chvhcvqhc fardeen")
     try{
         if (req.file) {
-            console.log("image",req.file)
               const buffer = req.file.buffer;
             const dataUri = `data:${req.file.mimetype};base64,${buffer.toString('base64')}`;
     const uploadObj = await cloudinary.uploader.upload(dataUri, { resource_type: 'auto' })
@@ -39,7 +37,6 @@ router.get('/',async(req,res)=>{
 router.delete('/:id',async(req,res)=>{
     const {id}=req.params;
     const result=await productDetails.deleteOne({_id:id});
-    console.log("backend result",result);
     if(result.acknowledged){
         res.send({status:"success"})
     }else{

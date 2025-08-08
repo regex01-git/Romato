@@ -16,7 +16,7 @@ export const signin = createAsyncThunk(
     "userSlice/signin",
     async (values, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/login', {
+            const response = await axios.post('https://romato-1.onrender.com/api/login', {
                 method: 'POST',
                 data: values
             })
@@ -34,7 +34,7 @@ export const signup = createAsyncThunk(
     async (values, { rejectWithValue }) => {
         console.log("values", values)
         try {
-            const response = await axios('http://localhost:5000/api/user', {
+            const response = await axios('https://romato-1.onrender.com/api/user', {
                 method: "POST",
                 data:values
             })
